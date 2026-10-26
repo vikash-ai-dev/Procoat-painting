@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 60% 18%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 22 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 22 100% 55%;
+    --radius: 0.75rem;
+  }
+  html { font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif; }
+  body { font-feature-settings: 'ss01', 'cv11'; }
+}
+
+@layer utilities {
+  .grain-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(15,23,42,0.08) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  .paint-stroke {
+    background: linear-gradient(135deg, #ff6a1a 0%, #ff8a3d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow-orange { box-shadow: 0 20px 60px -20px rgba(255,106,26,0.5); }
+  .glow-navy { box-shadow: 0 25px 70px -25px rgba(15,23,42,0.6); }
+}
+
+.marquee { display: flex; overflow: hidden; }
+.marquee-track { display: flex; animation: marquee 30s linear infinite; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
